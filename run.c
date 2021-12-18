@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 15:35:38 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:50:14 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 21:08:02 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	*pthread_run(void *p)
 
 void	philo_end(t_info *info, t_p *p, int index)
 {
-	while (index-- >= 0)
+	while (index-- > 0)
 		pthread_join(p[index].thread_id, NULL);
 	destroy_all_mutex(info, info->nop);
 	free(info->philos);

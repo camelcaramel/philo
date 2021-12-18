@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 15:18:02 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:47:25 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 21:09:16 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	mutex_init(t_info *info)
 	while (i < info->nop)
 	{
 		if (pthread_mutex_init(&(info->forks[i]), NULL))
-			return (destroy_all_mutex(info, i - 1));
+			return (destroy_all_mutex(info, i));
 		i++;
 	}
 	return (0);
