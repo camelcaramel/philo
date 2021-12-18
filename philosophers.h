@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:15:58 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:57:12 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:58:10 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_info
 	long long		start_time;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print;
-	t_p				*philos;
+	struct s_p		*philos;
 }	t_info;
 
 typedef struct s_p
