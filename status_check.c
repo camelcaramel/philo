@@ -6,16 +6,16 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:55:37 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:21:29 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:47:10 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "phiosophers.h"
+#include "philosophers.h"
 
 void	eat_check(t_info *info, t_p *philo)
 {
-	int 	i;
-	
+	int	i;
+
 	i = 0;
 	while (info->noe != -1 && i < info->nop && philo[i].eat_cnt > info->noe)
 		i++;
@@ -25,7 +25,7 @@ void	eat_check(t_info *info, t_p *philo)
 
 int	check_value(t_info *info)
 {
-	return (info->nop >= 2 && info->nop <= 200 
+	return (info->nop >= 2 && info->nop <= 200
 		&& info->ttd >= 60 && info->tte >= 60 && info->tts >= 60);
 }
 
@@ -49,7 +49,7 @@ void	life(t_info *info, t_p *p)
 			i++;
 		}
 		if (info->die)
-			break;
+			break ;
 		eat_check(info, info->philos);
 	}
 }

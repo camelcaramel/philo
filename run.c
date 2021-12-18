@@ -6,11 +6,11 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 15:35:38 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:21:02 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:47:10 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "phiosophers.h"
+#include "philosophers.h"
 
 void	philo_eat(t_info *info, t_p *p)
 {
@@ -35,7 +35,7 @@ int	philo_life(t_info *info, t_p *p)
 
 void	*pthread_run(void *p)
 {
-	t_p	*rp;
+	t_p		*rp;
 	t_info	*info;
 
 	rp = (t_p *)p;
@@ -45,7 +45,7 @@ void	*pthread_run(void *p)
 	while (!(info->die))
 	{
 		if (philo_life(info, rp))
-			break;
+			break ;
 		print(info, "is sleeping", rp->id);
 		philo_sleep_time(info);
 		print(info, "is thinking", rp->id);
@@ -72,7 +72,8 @@ int	philo_start(t_info *info, t_p *philos)
 	while (i < info->nop)
 	{
 		philos[i].check_d_time = get_time();
-		if (pthread_create(&(philos[i].thread_id), NULL, pthread_run, (void *)&(philos[i])))
+		if (pthread_create(&(philos[i].thread_id), NULL,
+			pthread_run, (void *)&(philos[i])))
 		{
 			philo_end(info, info->philos, i);
 			return (-1);

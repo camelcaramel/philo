@@ -6,13 +6,13 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 15:18:02 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:20:59 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:47:25 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "phiosophers.h"
+#include "philosophers.h"
 
-int		mutex_init(t_info *info)
+int	mutex_init(t_info *info)
 {
 	int	i;
 
@@ -42,9 +42,9 @@ int	destroy_all_mutex(t_info *info, int index)
 	return (-1);
 }
 
-int		philo_init(t_info *info)
+int	philo_init(t_info *info)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	info->philos = malloc(sizeof(t_p) * (info->nop));
@@ -63,12 +63,12 @@ int		philo_init(t_info *info)
 		info->philos[i].check_d_time = 0;
 		info->philos[i].eat_cnt = 0;
 		info->philos[i].info = info;
-		i++;		
+		i++;
 	}
 	return (0);
 }
 
-int init(t_info *info)
+int	init(t_info *info)
 {
 	info->die = 0;
 	info->eat_check = 0;

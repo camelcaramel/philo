@@ -6,13 +6,13 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:16:04 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:21:26 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:47:10 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "phiosophers.h"
+#include "philosophers.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_info	info;
 
@@ -35,6 +35,5 @@ int main(int argc, char *argv[])
 	if (init(&info) == -1)
 		return (error("Error!\n"));
 	philo_start(&info, info.philos);
-	while(1);
 	return (0);
 }
