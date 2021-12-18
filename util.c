@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:23:58 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:47:10 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:49:51 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	is_space(char c)
 {
-	return (c == '\t' || c == '\n' ||
-				c == '\v' || c == '\f' || c == '\r' || c == ' ' ? 1 : 0);
+	return (c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r' || c == ' ' ? 1 : 0);
 }
 
 static int	ft_isdigit(char c)

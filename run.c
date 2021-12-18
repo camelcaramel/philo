@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 15:35:38 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:47:10 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:50:14 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	philo_start(t_info *info, t_p *philos)
 	{
 		philos[i].check_d_time = get_time();
 		if (pthread_create(&(philos[i].thread_id), NULL,
-			pthread_run, (void *)&(philos[i])))
+				pthread_run, (void *)&(philos[i])))
 		{
 			philo_end(info, info->philos, i);
 			return (-1);
