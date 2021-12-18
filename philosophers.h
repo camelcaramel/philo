@@ -6,7 +6,7 @@
 /*   By: donghwik <donghwik@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:15:58 by donghwik          #+#    #+#             */
-/*   Updated: 2021/12/18 20:53:29 by donghwik         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:55:59 by donghwik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,8 @@
 # include <unistd.h>
 # include <sys/time.h>
 
-typedef struct	s_p
+typedef struct	s_info
 {
-	int	id;
-	int	left_fork;
-	int	right_fork;
-	long long	check_d_time;
-	int	eat_cnt;
-	struct s_info	*info;
-	pthread_t	thread_id;
-}	t_p;
-
-typedef struct	s_info{
 	int	nop;
 	int	ttd;
 	int	tte;
@@ -43,6 +33,17 @@ typedef struct	s_info{
 	pthread_mutex_t	print;
 	t_p	*philos;
 }	t_info;
+
+typedef struct	s_p
+{
+	int			id;
+	int			left_fork;
+	int			right_fork;
+	long long	check_d_time;
+	int			eat_cnt;
+	t_info		*info;
+	pthread_t	thread_id;
+}	t_p;
 
 int			ft_atoi(const char *str);
 void		print(t_info *info, char *str, int id);
